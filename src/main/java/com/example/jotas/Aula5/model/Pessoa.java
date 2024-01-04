@@ -21,7 +21,7 @@ public class Pessoa {
     private String genero;
     private LocalDate dataNascimento;
 
-    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pessoa")
     private List<Telefone> telefones;
 
 }
