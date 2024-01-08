@@ -26,8 +26,10 @@ public class PessoaService {
     private ModelMapper modelMapper;
 
     public Pessoa savePessoa(Pessoa pessoaInput) {
+
         pessoaRepository.save(pessoaInput);
         telefoneService.salvarTelefones(pessoaInput.getTelefones(), pessoaInput);
+
         return pessoaInput;
     }
 
