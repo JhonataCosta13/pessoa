@@ -24,4 +24,6 @@ public class Pessoa {
     @OneToMany(mappedBy = "pessoa")
     private List<Telefone> telefones;
 
+    private String cpf;
+
 }

@@ -1,6 +1,7 @@
 package com.example.jotas.Aula5.controller;
 
 import com.example.jotas.Aula5.model.Pessoa;
+import com.example.jotas.Aula5.model.dto.PessoaDTO;
 import com.example.jotas.Aula5.repository.PessoaRepository;
 import com.example.jotas.Aula5.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,9 @@ public class PessoaController {
     private PessoaService pessoaService;
 
     @GetMapping
-    public ResponseEntity<List<Pessoa>> buscarPessoas(){
+    public ResponseEntity<List<PessoaDTO>> buscarPessoas(){
 
-        List<Pessoa> pessoas = pessoaService.getPessoas();
+        List<PessoaDTO> pessoas = pessoaService.getPessoas();
 
         return ResponseEntity.ok().body(pessoas);
     }
