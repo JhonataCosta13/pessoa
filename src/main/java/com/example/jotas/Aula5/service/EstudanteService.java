@@ -29,6 +29,7 @@ public class EstudanteService {
     public Estudante adicionarDisiciplinas(Long id, DisciplinasInputDTO disciplinaIds) {
         Estudante estudante = estudanteRepository.findById(id).get();
         List<Disciplina> disciplinas = disciplinaService.buscarDisciplinasByIds(disciplinaIds.getDisciplinasIds().stream().toList());
+        disciplinaService.vinculaEstudante(disciplinas, estudante);
         estudante.setDisciplinas(disciplinas);
         return estudanteRepository.save(estudante);
     }

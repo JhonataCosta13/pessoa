@@ -1,9 +1,11 @@
 package com.example.jotas.Aula5.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -25,5 +27,13 @@ public class Disciplina {
             joinColumns = @JoinColumn(name = "disciplina_id"),
             inverseJoinColumns = @JoinColumn(name = "estudante_id")
     )
+    @JsonIgnore
     private List<Estudante> estudantes;
+
+    public void addEstudante(Estudante estudante){
+        if(this.estudantes == null){
+            this.estudantes = new ArrayList<>();
+        }
+        this.estudantes.add(estudante);
+    }
 }
