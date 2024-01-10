@@ -24,7 +24,7 @@ public class Pessoa {
     @OneToMany(mappedBy = "pessoa")
     private List<Telefone> telefones;
 
-    private String cpf;
-
-
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "documento_id")
+    private Documento documento;
 }

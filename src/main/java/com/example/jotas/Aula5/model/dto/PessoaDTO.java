@@ -1,5 +1,6 @@
 package com.example.jotas.Aula5.model.dto;
 
+import com.example.jotas.Aula5.model.Documento;
 import com.example.jotas.Aula5.model.Telefone;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,5 +17,5 @@ public class PessoaDTO {
     private String genero;
     private LocalDate dataNascimento;
     private List<TelefoneDTO> telefones;
-
+    private Documento documento;
 }
